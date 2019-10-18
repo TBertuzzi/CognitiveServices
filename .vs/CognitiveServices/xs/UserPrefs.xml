@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{F5339D26-61FF-41B1-9244-B97984B658F8}|Default">
+  <MonoDevelop.Ide.ItemProperties.DeteccaoPessoas PreferredExecutionTarget="/Applications/Microsoft Edge Beta.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DeteccaoPessoas/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="DeteccaoPessoas/Controllers/HomeController.cs" Line="41" Column="54" />
+      <File FileName="DeteccaoPessoas/Helpers/Constantes.cs" />
+      <File FileName="DeteccaoPessoas/Views/Home/Index.cshtml" />
+      <File FileName="DeteccaoPessoas/Views/Shared/_Layout.cshtml" Line="49" Column="36" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CognitiveServices" expanded="True">
+            <Node name="DeteccaoPessoas" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Uploads" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

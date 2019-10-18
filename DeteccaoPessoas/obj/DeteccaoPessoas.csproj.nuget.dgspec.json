@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bertuzzi/Desktop/CognitiveServices/DeteccaoPessoas/DeteccaoPessoas.csproj": {}
+  },
+  "projects": {
+    "/Users/bertuzzi/Desktop/CognitiveServices/DeteccaoPessoas/DeteccaoPessoas.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bertuzzi/Desktop/CognitiveServices/DeteccaoPessoas/DeteccaoPessoas.csproj",
+        "projectName": "DeteccaoPessoas",
+        "projectPath": "/Users/bertuzzi/Desktop/CognitiveServices/DeteccaoPessoas/DeteccaoPessoas.csproj",
+        "packagesPath": "/Users/bertuzzi/.nuget/packages/",
+        "outputPath": "/Users/bertuzzi/Desktop/CognitiveServices/DeteccaoPessoas/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bertuzzi/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "HttpExtension": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "OpenCvSharp4": {
+              "target": "Package",
+              "version": "[4.1.0.20190416, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/Users/bertuzzi/Library/Caches/VisualStudio/8.0/MSBuild/933_1/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

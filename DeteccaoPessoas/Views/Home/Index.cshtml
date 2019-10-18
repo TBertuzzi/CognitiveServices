@@ -1,0 +1,89 @@
+﻿<div class="container">
+    <h1>Detector de Pessoas - Azure Visão Computacional</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div id="my_camera" style="width:320px; height:240px;"></div>
+        </div>
+	    <div class="col-md-4">
+		    <canvas id="canvas" width="320" height="240"></canvas>
+	    </div>
+	    <div class="col-md-4">
+		    Pessoas identificadas: <span id="npessoas">0</span>
+	    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <button type="button" class="btn btn-primary" onClick="start_snapping()">Iniciar</button>
+            <button type="button" class="btn btn-primary" onClick="stop_snapping()">Parar</button>
+            <button type="button" class="btn btn-primary" onClick="erase_snaps()">Limpar Video</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/webcam.min.js"></script>
+
+<script>		
+		Webcam.attach( '#my_camera' );
+		
+		var timer = null;
+		const canvas = document.getElementById('canvas');
+		const context = canvas.getContext('2d');
+		const img = new Image();
+        					
+		function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {				
+				Webcam.upload( data_uri, 'Home/SnapImage', function(code, json) {					
+					var objetoRetorno = JSON.parse(json); 
+					var contadorPessoas = 0;					
+					img.src = data_uri;
+					img.onload = function() {
+						context.drawImage(img, 0, 0);
+						
+						for(var i = 0 ; i < objetoRetorno.objects.length ; i++){
+							var objeto = objetoRetorno.objects[i];
+							
+							var cor = "green";
+							if (objeto.object === "person") {
+								contadorPessoas = contadorPessoas + 1;
+								cor = "red";
+							}
+							context.beginPath();                
+							context.strokeStyle = cor;
+							context.lineWidth = "2";
+							context.rect(objeto.rectangle.x, objeto.rectangle.y, objeto.rectangle.w, objeto.rectangle.h);
+							context.stroke();
+							
+							context.fillStyle = cor;
+							context.font = "15pt sans-serif";
+							context.fillText(objeto.object, objeto.rectangle.x - 2, objeto.rectangle.y - 5);
+							
+							
+						}
+						
+						$("#npessoas").html(contadorPessoas);
+					};					
+				} );				
+			} );
+		}
+		
+		function start_snapping() {
+			if (!timer) {
+				take_snapshot();
+				timer = setInterval( take_snapshot, 1000 );
+			}
+		}
+		
+		function stop_snapping() {
+			if (timer) {
+				clearTimeout( timer );
+				timer = null;
+			}
+		}
+		
+		function erase_snaps() {
+			const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            $("#npessoas").html(0);
+		}
+	</script>
